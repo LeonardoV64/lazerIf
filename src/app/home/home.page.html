@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Registro de Monumentos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="preview">
+    <ion-avatar (click)="changeImage()">
+      <img *ngIf="profile?.imageUrl; else placeholder_avatar;" [src]="profile.imageUrl" />
+
+      <ng-template #placeholder_avatar>
+        <div class="fallback">
+          <p>Alterar Foto</p>
+        </div>
+      </ng-template>
+    </ion-avatar>
+  </div>
+
+
+  <ion-list>
+    <ion-item *ngFor="let local of locais" (click)="openLocal(local)">
+      <ion-label>
+        {{ local.nome }}
+      </ion-label>
+      <ion-label>
+        {{ local.localizacao }}
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addLocal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+

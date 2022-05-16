@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <div *ngIf="local">
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input [(ngModel)]="local.nome"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label position="stacked">Localização</ion-label>
+      <ion-textarea [(ngModel)]="local.localizacao" rows="8"></ion-textarea>
+    </ion-item>
+  </div>
+ 
+  <ion-button expand="block" color="success" (click)="updateLocal()">
+    <ion-icon name="save" slot="start"></ion-icon>
+    Alterar
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="deleteLocal()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    Deletar
+  </ion-button>
+ 
+</ion-content>

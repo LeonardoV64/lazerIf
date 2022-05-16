@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lazer-if": {
+      "hosting": {
+        "app": [
+          "lazer-if"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lazer-if"
+  }
+}
