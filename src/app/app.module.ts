@@ -15,6 +15,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { Capacitor } from '@capacitor/core';
 import { indexedDBLocalPersistence, initializeAuth } from 'firebase/auth';
 import { getApp } from 'firebase/app';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +36,7 @@ import { getApp } from 'firebase/app';
     }),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    provideDatabase(() => getDatabase()),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

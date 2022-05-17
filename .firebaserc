@@ -6,9 +6,16 @@
           "lazer-if"
         ]
       }
+    },
+    "lazer-if-97ced": {
+      "hosting": {
+        "app": [
+          "lazer-if-97ced"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "lazer-if"
+    "default": "lazer-if-97ced"
   }
 }
