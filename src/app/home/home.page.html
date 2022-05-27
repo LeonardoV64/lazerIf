@@ -23,15 +23,20 @@
       </ng-template>
     </ion-avatar>
   </div>
+  <br/>
 
 
   <ion-list>
+    <ion-list-header mode="ios">Monumentos Visitados</ion-list-header><br>
     <ion-item *ngFor="let local of locais" (click)="openLocal(local)">
       <ion-label>
         {{ local.nome }}
       </ion-label>
       <ion-label>
         {{ local.localizacao }}
+      </ion-label>
+      <ion-label>
+        {{ local.data }}
       </ion-label>
     </ion-item>
 

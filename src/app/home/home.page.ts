@@ -78,6 +78,11 @@ export class HomePage {
           type: 'text'
         },
         {
+          name: 'data',
+          placeholder: 'Data da Visita',
+          type: 'date'
+        },
+        {
           name: 'localizacao',
           placeholder: 'Localização',
           type: 'textarea'
@@ -90,7 +95,7 @@ export class HomePage {
         }, {
           text: 'Adicionar',
           handler: res => {
-            this.locaisService.addLocal({ localizacao: res.localizacao, nome: res.nome });
+            this.locaisService.addLocal({ localizacao: res.localizacao, nome: res.nome, data: res.data });
           }
         }
       ]

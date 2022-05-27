@@ -15,6 +15,11 @@
       <ion-label position="stacked">Localização</ion-label>
       <ion-textarea [(ngModel)]="local.localizacao" rows="8"></ion-textarea>
     </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Visitado em:</ion-label>
+      <ion-input [(ngModel)]="local.data"></ion-input>
+    </ion-item>
   </div>
  
   <ion-button expand="block" color="success" (click)="updateLocal()">

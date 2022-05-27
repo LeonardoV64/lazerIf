@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc, updateDoc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, Timestamp } from 'rxjs';
  
 export interface Local {
   id?: string;
   nome: string;
   localizacao: string;
+  data: Date;
 }
  
 @Injectable({
