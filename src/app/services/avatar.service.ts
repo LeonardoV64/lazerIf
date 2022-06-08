@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
+import { ImagePicker } from '@awesome-cordova-plugins/image-picker/ngx';
 import { doc, docData, Firestore, setDoc } from '@angular/fire/firestore';
 import {
   getDownloadURL,
