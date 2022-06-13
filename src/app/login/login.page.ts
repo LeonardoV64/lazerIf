@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
     if (user) {
       this.router.navigateByUrl('/home', { replaceUrl: true });
     } else {
-      this.showAlert('Registration failed', 'Please try again!');
+      this.showAlert('Falha no Cadastro', 'Tente Novamente!');
     }
   }
 
@@ -60,7 +60,7 @@ export class LoginPage implements OnInit {
     if (user) {
       this.router.navigateByUrl('/home', { replaceUrl: true });
     } else {
-      this.showAlert('Login failed', 'Please try again!');
+      this.showAlert('Falha no Login', 'Tente Novamente!');
     }
   }
 

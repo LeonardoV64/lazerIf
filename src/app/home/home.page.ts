@@ -79,7 +79,7 @@ export class HomePage {
         },
         {
           name: 'data',
-          placeholder: 'Data da Visita',
+          placeholder: 'mm/dd/ano',
           type: 'date'
         },
         {

@@ -38,7 +38,7 @@ export class LocaisService {
  
   updateLocal(local: Local) {
     const noteDocRef = doc(this.firestore, `locais/${local.id}`);
-    return updateDoc(noteDocRef, { title: local.nome, text: local.localizacao });
+    return updateDoc(noteDocRef, { title: local.nome, text: local.localizacao, date: local.data });
   }
 }
 

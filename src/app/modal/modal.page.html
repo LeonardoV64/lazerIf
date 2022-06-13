@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="gray">
     <ion-title>Detalhes</ion-title>
   </ion-toolbar>
 </ion-header>
  
-<ion-content>
+<ion-content color="gray">
   <div *ngIf="local">
     <ion-item>
-      <ion-label position="stacked">Nome</ion-label>
+      <ion-label position="stacked" color = "medium">Nome</ion-label>
       <ion-input [(ngModel)]="local.nome"></ion-input>
     </ion-item>
  
