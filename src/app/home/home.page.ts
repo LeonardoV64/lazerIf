@@ -67,6 +67,35 @@ export class HomePage {
     }
   }
 
+  /*
+  async changeImageLocal() {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Base64,
+      source: CameraSource.Camera, // Camera, Photos or Prompt!
+    });
+
+    if (image) {
+      const loading = await this.loadingController.create();
+      await loading.present();
+
+      const result = await this.locaisService.uploadImageLocal(image);
+      loading.dismiss();
+
+      if (!result) {
+        const alert = await this.alertController.create({
+          header: 'Upload failed',
+          message: 'There was a problem uploading your avatar.',
+          buttons: ['OK'],
+        });
+        await alert.present();
+      }
+    }
+  }
+  */
+  
+
 
   async addLocal(){
     const alert = await this.alertController.create({
@@ -95,7 +124,7 @@ export class HomePage {
         }, {
           text: 'Adicionar',
           handler: res => {
-            this.locaisService.addLocal({ localizacao: res.localizacao, nome: res.nome, data: res.data });
+            this.locaisService.addLocal({ localizacao: res.localizacao, nome: res.nome, data: res.data, imageURL: res.imageURL });
           }
         }
       ]

@@ -38,11 +38,24 @@
       <ion-label>
         {{ local.data }}
       </ion-label>
+
+      <!-- <ion-label>
+        <ion-avatar (click)="changeImageLocal()">
+          <img *ngIf="local?.imageURL; else placeholder_avatar;" [src]="local.imageURL" />
+    
+          <ng-template #placeholder_avatar>
+            <div class="fallback">
+              <p>Alterar Foto</p>
+            </div>
+          </ng-template>
+        </ion-avatar> 
+
+      </ion-label> -->
     </ion-item>
 
   </ion-list>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
     <ion-fab-button (click)="addLocal()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
