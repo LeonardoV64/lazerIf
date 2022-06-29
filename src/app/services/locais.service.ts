@@ -6,15 +6,13 @@ import {
   Storage,
   uploadString,
 } from '@angular/fire/storage';
-import { Photo } from '@capacitor/camera';
 import { Observable } from 'rxjs';
- 
+
 export interface Local {
   id?: string;
   nome: string;
   localizacao: string;
   data: Date;
-  imageURL: string;
 }
  
 @Injectable({
@@ -47,36 +45,11 @@ export class LocaisService {
  
   updateLocal(local: Local) {
     const noteDocRef = doc(this.firestore, `locais/${local.id}`);
-    return updateDoc(noteDocRef, { title: local.nome, text: local.localizacao, date: local.data });
+    return updateDoc(noteDocRef, { title: local.nome, text: local.localizacao, date: local.data});
   }
 
-
-  /*
-  async uploadImageLocal(cameraFile: Photo) {
-    const localId = this.local.id;
-    const path = `uploads/${localId}/local.png`;
-    const storageRef = ref(this.storage, path);
-
-    try {
-      await uploadString(storageRef, cameraFile.base64String, 'base64');
-
-      const imageUrl = await getDownloadURL(storageRef);
-
-      const locaisDocRef = doc(this.firestore, `locais/${localId}`);
-      await setDoc(locaisDocRef, {
-        imageUrl,
-      });
-      return true;
-    } catch (e) {
-      return null;
-    }
-  }
   
 
-  getLocalImage(id) {
-   const locaisDocRef = doc(this.firestore, `locais/${id}`);
-   return docData(locaisDocRef);
-  }
-  */
+
 }
 

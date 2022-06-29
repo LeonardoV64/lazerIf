@@ -46,7 +46,7 @@ export class HomePage {
       quality: 90,
       allowEditing: false,
       resultType: CameraResultType.Base64,
-      source: CameraSource.Camera, // Camera, Photos or Prompt!
+      source: CameraSource.Camera, 
     });
 
     if (image) {
@@ -66,36 +66,7 @@ export class HomePage {
       }
     }
   }
-
-  /*
-  async changeImageLocal() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: false,
-      resultType: CameraResultType.Base64,
-      source: CameraSource.Camera, // Camera, Photos or Prompt!
-    });
-
-    if (image) {
-      const loading = await this.loadingController.create();
-      await loading.present();
-
-      const result = await this.locaisService.uploadImageLocal(image);
-      loading.dismiss();
-
-      if (!result) {
-        const alert = await this.alertController.create({
-          header: 'Upload failed',
-          message: 'There was a problem uploading your avatar.',
-          buttons: ['OK'],
-        });
-        await alert.present();
-      }
-    }
-  }
-  */
   
-
 
   async addLocal(){
     const alert = await this.alertController.create({
@@ -103,18 +74,18 @@ export class HomePage {
       inputs: [
         {
           name: 'nome',
-          placeholder: 'Nome do Monumento',
+          placeholder: 'País',
           type: 'text'
         },
         {
           name: 'data',
-          placeholder: 'mm/dd/ano',
+          placeholder: 'Data',
           type: 'date'
         },
         {
           name: 'localizacao',
-          placeholder: 'Localização',
-          type: 'textarea'
+          placeholder: 'Continente',
+          type: 'text'
         }
       ],
       buttons: [
@@ -124,7 +95,7 @@ export class HomePage {
         }, {
           text: 'Adicionar',
           handler: res => {
-            this.locaisService.addLocal({ localizacao: res.localizacao, nome: res.nome, data: res.data, imageURL: res.imageURL });
+            this.locaisService.addLocal({ localizacao: res.localizacao, nome: res.nome, data: res.data });
           }
         }
       ]

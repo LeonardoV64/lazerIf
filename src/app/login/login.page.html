@@ -1,22 +1,22 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-title>Lazer IF</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" color="tertiary">
   <form [formGroup]="credentials" (ngSubmit)="login()">
-    <ion-item fill="solid" class="ion-margin-bottom">
+    <ion-item fill="outline" color="dark" class="ion-margin-bottom">
       <ion-input type="email" placeholder="E-mail" formControlName="email"></ion-input>
       <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">O E-mail não é válido !</ion-note>
     </ion-item>
 
-    <ion-item fill="solid" class="ion-margin-bottom">
+    <ion-item fill="outline" color="dark" class="ion-margin-bottom">
       <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
       <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">A senha precisa ter 6 caracteres !</ion-note>
     </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="!credentials.valid">Entrar</ion-button>
-    <ion-button expand="full" type="button" (click)="register()">Criar Conta</ion-button>
+    <ion-button expand="full" color="dark" type="submit" [disabled]="!credentials.valid">Entrar</ion-button>
+    <ion-button expand="full" color="dark" type="button" (click)="register()">Criar Conta</ion-button>
   </form>
 </ion-content>
